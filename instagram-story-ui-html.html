@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instagram Story UI</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lucide/0.263.1/lucide.min.js"></script>
+</head>
+<body>
+    <div class="instagram-story-ui">
+        <!-- Top Bar -->
+        <div class="top-bar">
+            <i data-lucide="x" id="close-btn"></i>
+            <div class="top-actions">
+                <i data-lucide="sparkles" id="filter-btn"></i>
+                <i data-lucide="disc" id="switch-camera-btn"></i>
+                <i data-lucide="sun" id="flash-btn"></i>
+                <i data-lucide="type" id="add-text-btn"></i>
+                <i data-lucide="smile" id="add-sticker-btn"></i>
+                <i data-lucide="sliders" id="edit-image-btn"></i>
+            </div>
+        </div>
+
+        <!-- Main Content Area -->
+        <div class="main-content">
+            <video id="video-preview" autoplay playsinline></video>
+            <canvas id="canvas" style="display: none;"></canvas>
+            <img id="captured-image" style="display: none;">
+            <video id="captured-video" style="display: none;" controls></video>
+        </div>
+
+        <!-- Bottom Bar -->
+        <div class="bottom-bar">
+            <div class="media-type-selection">
+                <i data-lucide="image" id="photo-btn"></i>
+                <i data-lucide="video" id="video-btn"></i>
+            </div>
+            <button id="capture-btn" class="capture-btn">
+                <i data-lucide="camera"></i>
+            </button>
+            <div class="post-capture-actions" style="display: none;">
+                <i data-lucide="rotate-ccw" id="retake-btn"></i>
+                <i data-lucide="download" id="save-btn"></i>
+                <i data-lucide="share-2" id="share-btn"></i>
+            </div>
+        </div>
+
+        <!-- Overlays -->
+        <div id="text-overlay" class="overlay" style="display: none;">
+            <input type="text" id="text-input" placeholder="Enter text">
+        </div>
+        <div id="sticker-overlay" class="overlay" style="display: none;">
+            <div class="sticker-container">
+                <button class="sticker">😊</button>
+                <button class="sticker">😎</button>
+                <button class="sticker">🎉</button>
+                <button class="sticker">❤️</button>
+                <button class="sticker">👍</button>
+            </div>
+        </div>
+        <div id="edit-overlay" class="overlay" style="display: none;">
+            <input type="range" id="brightness-slider" min="0" max="200" value="100">
+            <input type="range" id="contrast-slider" min="0" max="200" value="100">
+            <button id="apply-edit-btn">Apply</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
