@@ -2,44 +2,47 @@
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Photo App</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>チェキ風写真アプリ</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div id="container">
-        <div id="video-container"></div>
+        <div id="video-container">
+            <video id="video" autoplay playsinline></video>
+        </div>
         <div id="overlay">
-            <img id="overlay-image" src="images/default-overlay.png">
+            <img id="overlay-image" src="images/default-overlay.png" alt="オーバーレイ画像">
         </div>
         <div id="ui-overlay">
-            <img src="images/ui-overlay.png">
+            <img src="images/ui-overlay.png" alt="UIオーバーレイ">
         </div>
         <div id="capture-btn">
             <div id="capture-btn-inner"></div>
         </div>
         <a href="#" id="rotate-link">
-            <img src="images/rotate.png" id="rotate-img">
+            <img src="images/rotate.png" id="rotate-img" alt="回転">
         </a>
         <a href="https://www.seibo.ed.jp/kyoto-hs/" id="logo-link">
-            <img src="images/erumin.png" id="logo-img">
+            <img src="images/erumin.png" id="logo-img" alt="ロゴ">
         </a>
         <div id="close-tab">
-            <img src="images/batu.png" id="close-tab-img">
+            <img src="images/batu.png" id="close-tab-img" alt="閉じる">
         </div>
     </div>
 
-    <div id="preview-container" style="display: none;">
+    <div id="preview-container">
         <div id="preview-overlay"></div>
-        <img id="captured-image">
+        <img id="captured-image" alt="撮影した画像">
         <div id="close-btn">
-            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdib3g9IjAgMCAyNCAyNCIgZmlsbD0id2hpdGUiIHdpZHRoPSIyNHB4IiBoZWlnaHQ9IjI0cHgiPgogICAgICAgICAgPHBhdGggZD0iTTE5IDYuNDFMMTcuNTkgNSAxMiAxMC41OSA2LjQxIDUgNSA2LjQxIDEwLjU5IDEyIDUgMTcuNTkgNi40MSAxOSAxMiAxMy40MSAxNy41OSAxOSAxOSAxNy41OSAxMy40MSAxMnoiPjwvcGF0aD4KICAgICAgICA8L3N2Zz4=">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0id2hpdGUiIHdpZHRoPSIyNHB4IiBoZWlnaHQ9IjI0cHgiPjxwYXRoIGQ9Ik0xOSA2LjQxTDE3LjU5IDUgMTIgMTAuNTkgNi40MSA1IDUgNi40MSAxMC41OSAxMiA1IDE3LjU5IDYuNDEgMTkgMTIgMTMuNDEgMTcuNTkgMTkgMTkgMTcuNTkgMTMuNDEgMTJ6Ii8+PC9zdmc+" alt="閉じる">
         </div>
         <div id="save-hint">長押しで保存</div>
-        <button id="share-btn">シェア</button>
     </div>
 
-    <audio id="shutter-sound" src="path/to/shutter-sound.mp3"></audio>
+    <canvas id="canvas" style="display: none;"></canvas>
+    <audio id="shutter-sound" src="sound/shutter.mp3"></audio>
+
     <script src="app.js"></script>
 </body>
 </html>
