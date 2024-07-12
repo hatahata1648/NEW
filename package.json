@@ -1,0 +1,13 @@
+{
+  "name": "instagram-story-ui",
+  "version": "1.0.0",
+  "description": "Instagram Story UI React Component",
+  "main": "src/InstagramStoryUI.js",
+  "dependencies": {
+    "react": "^17.0.2",
+    "lucide-react": "^0.263.1"
+  },
+  "peerDependencies": {
+    "react": "^17.0.2"
+  }
+}
